@@ -21,10 +21,12 @@ def registrar_nuevo_libro():
     return None
 
 def eliminar_ejemplar_libro():
+
     #completar
     return None
 
 def prestar_ejemplar_libro():
+    l.update 
     #completar
     return None
 

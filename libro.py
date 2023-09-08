@@ -10,7 +10,7 @@ def nuevo_libro():
     cant_ej_ad = int(input("Ingrese la cantida de ejemplares disponibles: "))
     cant_ej_pr = int(input("Ingrese la cantidad de ejemplares prestados: "))
     titulo = input("Ingrese el título del libro: ")
-    autor= input("Ingrese el autor del libro: ")
+    autor = input("Ingrese el autor del libro: ")
     libro = {'cod': cod, 'cant_ej_ad': cant_ej_ad, 'cant_ej_pr': cant_ej_pr, 'titulo': titulo, 'autor': autor}
     return libro
 

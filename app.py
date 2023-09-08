@@ -4,14 +4,14 @@
 import os
 import bibloteca as biblio
 
-print("Bienvenido!")
+print("Bienvenido a la biblioteca José Manuel Estrada!")
 respuesta = ''
 
 def menu():
     print("1 - Gestionar Prestamo")
     print("2 - Gestionar Devolucion")
     print("3 - Registrar nuevo libro")
-    print("4 - Elimiar ejemplar")
+    print("4 - Eliminar ejemplar")
     print("5 - Mostrar ejemplares prestados")
     print("6 - Salir")
 
@@ -21,18 +21,23 @@ while respuesta != "salir":
     os.system ("cls") #Limpiar pantalla
     if opt.isnumeric():
         if int(opt) == 1:
+            biblio.prestar_ejemplar_libro()
             #completar
             print()
         elif int(opt) == 2:
+            biblio.devolver_ejemplar_libro()
             #completar
             print()
         elif int(opt) == 3:
+            biblio.nuevo_libro()
             #completar
             print()
         elif int(opt) == 4:
+            biblio.eliminar_ejemplar_libro()
             #completar
             print()
         elif int(opt) == 5:
+            biblio.ejemplares_prestados()
             #completar
             print()
         elif int(opt) == 6:
