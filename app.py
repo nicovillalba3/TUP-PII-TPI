@@ -2,6 +2,7 @@
 
 
 import os
+import bibloteca as biblio
 
 print("Bienvenido!")
 respuesta = ''
@@ -11,7 +12,7 @@ def menu():
     print("2 - Gestionar Devolucion")
     print("3 - Registrar nuevo libro")
     print("4 - Elimiar ejemplar")
-    print("5 - Mostrar ejemplares perstados")
+    print("5 - Mostrar ejemplares prestados")
     print("6 - Salir")
 
 while respuesta != "salir":
