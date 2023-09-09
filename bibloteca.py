@@ -10,32 +10,60 @@ libros.append(l.libro3)
 
 def ejemplares_prestados():
 
-    print(libros)
+    libros_prestados = False 
+    
+    for libro in libros:
+        if libro["cant_ej_pr"] > 0:
+            print(f"Código: {libro['cod']}, Título: {libro['titulo']}, Ejemplares Prestados: {libro['cant_ej_pr']}")
+            libros_prestados = True  
+    
+    if not libros_prestados:
+        print("Ningún libro tiene ejemplares prestados.")
     # completar
     return None
 
 def registrar_nuevo_libro():
     nuevo_libro = l.nuevo_libro()
     libros.append(nuevo_libro)
-    #print(libros)
-    #print(nuevo_libro)
-    #completar
+    
     return None
 
 def eliminar_ejemplar_libro():
+    cod = input("Ingrese el código del libro: ")
+    
+    # Primero buscamos el libro por su código en la lista de libros
+    encontrado = None
+    for libro in libros:
+        if libro["cod"] == cod:
+            encontrado = libro
+            break
 
+    # Después el usuario confirma o no si avanza
+    confirmacion = input("¿Desea confirmar la eliminación del ejemplar? (si/no): ")
+    if encontrado:
+        
+        if confirmacion == "si":
+            encontrado["cant_ej_ad"] > 0
+            encontrado["cant_ej_ad"] -= 1
+            print("Ejemplar eliminado con éxito.")
+        else:
+            print("Error: No hay ejemplares adquiridos de este libro.")
+    else:
+        print("Error: El código del libro no existe.")
     #completar
     return None
 
 def prestar_ejemplar_libro():
     cod = input("Ingrese el código del libro: ")
 
+    # Primero buscamos el libro por su código en la lista de libros
     encontrado = None
     for libro in libros:
         if libro["cod"] == cod:
             encontrado = libro
             break
-    
+
+    # Después el usuario confirma o no si avanza
     if encontrado:
         if encontrado["cant_ej_pr"] < encontrado["cant_ej_ad"]:
             print(f"Autor: {encontrado['autor']}")
@@ -57,13 +85,14 @@ def prestar_ejemplar_libro():
 def devolver_ejemplar_libro():
     cod = input("Ingrese el código del libro a devolver: ")
     
-    # Buscar el libro por su código en la lista de libros
+    # Primero buscamos el libro por su código en la lista de libros
     encontrado = None
     for libro in libros:
         if libro["cod"] == cod:
             encontrado = libro
             break
 
+    # Después el usuario confirma o no si avanza
     if encontrado:
         confirmacion = input("¿Desea confirmar el préstamo? (si/no): ")
         if confirmacion == "si":
@@ -72,15 +101,8 @@ def devolver_ejemplar_libro():
             print("Devolución confirmada.")
         else:
             print("No se ha realizado la devolución.")
-        #if encontrado["cant_ej_pr"] > 0:
-        #    encontrado["cant_ej_pr"] -= 1
-        #    print("Devolución confirmada.")
-        #else:
-        #    print("Error: No hay ejemplares prestados de este libro.")
+        
     else:
         print("Error: El código del libro no existe.")
     return None
 
-#def nuevo_libro():
-    #completar
-#    return None
